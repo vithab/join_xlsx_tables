@@ -16,6 +16,9 @@ phone_list = xlsx.sheet(0).column(18)[5..].each do |row|
 	row
 end
 
+# Получив данные в переменные name_list, phone_list, закрываем документ
+xlsx.close
+
 # Делаем двумерный массив по парам [[имя, номер], ...]
 # для удобства записи построчно через итерацию при помощи гема write_xlsx
 name_list.each_with_index do |name, index|
