@@ -1,11 +1,12 @@
 # Скрипт для вычленения имён и телефонов абонентов из служебных файлов
-# TODO: Сделать "склейку из нескольких файлов"
+
 require 'roo'
 require 'write_xlsx'
 
 file_names = []
 person_list = []
 
+# Собираем имена файлов в папке в массив
 Dir.chdir('input_files') do
 	file_names = Dir.glob('*.xlsx').each { |file_name| file_name }
 end
