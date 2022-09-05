@@ -14,13 +14,13 @@ end
 file_names.each do |file_name|
 	xlsx = Roo::Spreadsheet.open("./input_files/#{file_name}")
 
-	# Получим массив строк столбца имён, начиная с 6ой строки
-	name_list = xlsx.sheet(0).column(17)[5..].each do |row|
+	# Получим массив строк столбца имён, начиная с 5ой строки
+	name_list = xlsx.sheet(0).column(18)[5..].each do |row|
 		row
 	end
 
-	# Получим массив строк столбца номеров, начиная с 6ой строки
-	phone_list = xlsx.sheet(0).column(18)[5..].each do |row|
+	# Получим массив строк столбца номеров, начиная с 5ой строки
+	phone_list = xlsx.sheet(0).column(19)[5..].each do |row|
 		row
 	end
 
@@ -34,6 +34,7 @@ file_names.each do |file_name|
 		person_list << person
 	end
 end
+
 # Делаем список уникальным
 person_list.uniq!
 
